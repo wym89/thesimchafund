@@ -1,0 +1,34 @@
+<html>
+    <form method="post" action="/admin/addsimcha">
+        <input type="input" name='simchaToAdd' placeholder="what is the simcha" />
+        <input type="hidden" name='id' value="0" />
+        <button type="submit">add simcha</button>
+    </form>
+
+   
+  <table> simchas
+   <tr>
+                <th>simcha</th>
+                <th>amount</th>
+                <th>status</th>
+                
+    </tr>
+   @model.simchas.forEach(function(simcha){
+        <tr>
+            <td> "@simcha.name_simcha" </td>
+            <td>amount donated $@simcha.total </td>
+            <td> @if(simcha.active){ <p>active</p>}else{<p>not active</p>} </td>
+            <td>
+                <form method="post" action="/admin/addsimcha/deactivate">
+                    <input type="hidden" name='simcha_id' value="@simcha.simcha_id" />
+                    @if(simcha.active){var value = 0}else{var value = 1}
+                    <input type="hidden" name='active' value='@value'/>
+                    <button type="submit">@if(simcha.active){ <p>set to not active</p>}else{<p>set to active</p>}</button>
+                </form>
+            </td>
+      </tr>
+  }) 
+  </table>
+
+    
+</html>

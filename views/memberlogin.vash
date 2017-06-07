@@ -1,0 +1,15 @@
+<html>
+  <h1> welcome to  @model.name </h1>
+  <h2> member login</h2>
+
+   <form method="post" action="/memberlogin">
+   <select name='id' >
+           @model.members.forEach(function(member){
+            <option value='@member.id' > @member.name </option>
+         })        
+   </select>
+    <input type="input" placeholder="password" name='password'  />
+   <button type="submit" >login</button>
+   </form>
+
+</html>

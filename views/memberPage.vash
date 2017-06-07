@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+        <h1 id="pageHeader">member page</h1>
+        <h2>@model.member[0].name</h2>
+        <p>account: @model.member[0].account </p>
+
+        <h2> your gifts</h2>
+        <table>
+            <tr>
+                <th>simcha</th>
+                <th>amount</th>
+            </tr>
+                @model.member.forEach(function(transaction){
+                 <tr>
+                    <td>@transaction.name_simcha</td>
+                    <td>@transaction.dotation_amount</td>
+                </tr>
+
+                })
+        </table>
+
+        <h2>give a gift</h2>
+        <ul>
+            @model.simchas.forEach(function(simcha){
+                <li> @simcha.name_simcha 
+                <form method="post" action="/memberPage">
+                    <label for="amount">amount $</label>
+                    <input type="number" name="amount" value="5"/>
+                    <input type="hidden" name="simcha" value="@simcha.simcha_id">
+                    <input type="hidden" name="member" value="@model.member[0].id">
+                    <button type="submit">add to gift</button> 
+                </form></li>
+            })
+        </ul>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!--script src="./utils/memberPage.js"></script-->
+        
+    </body>
+</html>

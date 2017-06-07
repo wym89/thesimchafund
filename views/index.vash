@@ -1,0 +1,6 @@
+<html>
+  <h1> welcome to  @model.name </h1>
+
+  <a href="/admin" ><button>admin </button></a>
+  <a href="/memberlogin" ><button>memberlogin </button></a>
+</html>

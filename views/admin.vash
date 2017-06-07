@@ -1,0 +1,6 @@
+<html>
+  <h1> welcome to  @model.name </h1>
+  <h2> admin page </h2>
+  <a href="admin/addmoney" ><button>add money </button></a>
+  <a href="admin/addsimcha" ><button>add simcha </button></a>
+</html>

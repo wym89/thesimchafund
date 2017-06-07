@@ -1,0 +1,8 @@
+<html>
+
+  <ul> members @model.members.forEach(function(member){
+    <li> @member.name </li>
+  }) </ul>
+
+
+</html>

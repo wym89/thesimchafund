@@ -1,0 +1,14 @@
+<html>
+
+  <ul> members @model.members.forEach(function(member){
+    <li> @member.name  $@member.account
+    <form method="post" action="/admin/addmoney">
+        <input type="number" name='moneyToAdd' value="50" />
+        <input type="hidden" name='id' value="@member.id" />
+        <input type="hidden" name='prevbalance' value="@member.account" />
+        <button type="submit">add money</button>
+    </form></li>
+  }) </ul>
+
+
+</html>
